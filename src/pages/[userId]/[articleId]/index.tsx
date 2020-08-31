@@ -4,6 +4,7 @@ import Error from 'next/error'
 
 import { useGetArticleQuery } from '@/generated/graphql'
 import { Article } from '@/components/article'
+import { formatDate } from '@/utils/date'
 
 import styles from './index.module.css'
 
@@ -28,7 +29,11 @@ const ArticlePage: NextPage = () => {
     return <Error statusCode={404} />
   }
 
-  const { user, subject, content } = data.articles_by_pk
+  const { user, subject, content, publishedAt } = data.articles_by_pk
+  if (!publishedAt) {
+    return <Error statusCode={404} />
+  }
+  const { datetime, isNew } = formatDate(new Date(publishedAt), new Date())
 
   return (
     <div className={styles.contentContainer}>
@@ -38,8 +43,13 @@ const ArticlePage: NextPage = () => {
           <img className={styles.userIcon} src="/profile.png" />
         </div>
         <div className={styles.userText}>
-          <div className={styles.userId}>{user.displayId}</div>
-          <span className={styles.userName}>{user.displayName}</span>
+          <div className={styles.userId}>
+            {user.displayName} @{user.displayId}
+          </div>
+          <span className={styles.publishedAt}>
+            <span>{datetime}</span>
+            {isNew ? <span className={styles.newContent}>New</span> : ''}
+          </span>
         </div>
       </div>
       <div className={styles.content}>

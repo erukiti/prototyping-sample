@@ -35,3 +35,17 @@
 .content {
   margin-top: 32px;
 }
+
+.userId {
+  font-size: 16px;
+}
+
+.publishedAt {
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.newContent {
+  margin-left: 8px;
+  color: #22c;
+}
