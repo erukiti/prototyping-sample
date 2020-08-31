@@ -3,6 +3,7 @@ import { NextPage } from 'next'
 import Error from 'next/error'
 
 import { useGetArticleQuery } from '@/generated/graphql'
+import { Article } from '@/components/article'
 
 import styles from './index.module.css'
 
@@ -41,7 +42,9 @@ const ArticlePage: NextPage = () => {
           <span className={styles.userName}>{user.displayName}</span>
         </div>
       </div>
-      <div className={styles.content}>{content}</div>
+      <div className={styles.content}>
+        <Article content={content} />
+      </div>
     </div>
   )
 }
