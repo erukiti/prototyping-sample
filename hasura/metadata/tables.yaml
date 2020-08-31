@@ -1,1 +1,32 @@
-[]
+- table:
+    schema: public
+    name: articles
+  configuration:
+    custom_root_fields: {}
+    custom_column_names:
+      author_id: authorId
+      updated_at: updatedAt
+      published_at: publishedAt
+      created_at: createdAt
+  object_relationships:
+  - name: user
+    using:
+      foreign_key_constraint_on: author_id
+- table:
+    schema: public
+    name: users
+  configuration:
+    custom_root_fields: {}
+    custom_column_names:
+      display_name: displayName
+      display_id: displayId
+      updated_at: updatedAt
+      created_at: createdAt
+  array_relationships:
+  - name: articles
+    using:
+      foreign_key_constraint_on:
+        column: author_id
+        table:
+          schema: public
+          name: articles
