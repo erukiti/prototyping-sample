@@ -24,8 +24,10 @@ export const formatDate = (d: Date, now: Date): FormattedDate => {
     { value: minute },
   ] = dtf.formatToParts(d)
 
+  const past = (now.getTime() - d.getTime()) / 1000
+  const isNew = past < 24 * 60 * 60 * 7
   return {
     datetime: `${year}/${month}/${day} ${hour}:${minute}`,
-    isNew: true,
+    isNew,
   }
 }
