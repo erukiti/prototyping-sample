@@ -13,3 +13,6 @@ generates:
       withHooks: true
       withHOC: false
       withComponent: false
+      scalars:
+        timestamptz: string
+        uuid: string

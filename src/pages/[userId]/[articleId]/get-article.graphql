@@ -1,0 +1,13 @@
+query getArticle($id: uuid!) {
+  articles_by_pk(id: $id) {
+    subject
+    user {
+      displayId
+      displayName
+    }
+    createdAt
+    publishedAt
+    updatedAt
+    content
+  }
+}
