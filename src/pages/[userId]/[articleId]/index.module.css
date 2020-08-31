@@ -14,10 +14,17 @@
 .userContainer {
   margin-top: 32px;
   display: flex;
+  align-items: center;
 }
 
-.userId {
-  font-size: 16px;
+.userText {
+  margin-left: 12px;
+}
+
+.userIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
 }
 
 .userName {
