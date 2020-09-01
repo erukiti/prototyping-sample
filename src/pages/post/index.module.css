@@ -1,0 +1,15 @@
+.editContent {
+  width: 640px;
+  margin: 32px auto;
+}
+
+.subject {
+  font-size: 36px;
+  width: 100%;
+}
+
+.editor {
+  margin-top: 24px;
+  width: 100%;
+  font-size: 24px;
+}
