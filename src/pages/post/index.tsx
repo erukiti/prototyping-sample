@@ -35,8 +35,10 @@ const PostPage: NextPage = () => {
           value={content}
           onEdit={setContent}
         />
-        <Button className={styles.submitButton}>投稿する</Button>
       </div>
+      <footer className={styles.footer}>
+        <Button className={styles.submitButton}>投稿する</Button>
+      </footer>
     </>
   )
 }
