@@ -1,25 +1,35 @@
 import { NextPage } from 'next'
-import React from 'react'
-import autosize from 'autosize'
+import { useState, useCallback } from 'react'
+
+import { Editor } from '@/components/editor'
 
 import styles from './index.module.css'
 
 const PostPage: NextPage = () => {
-  const ref = React.useRef<HTMLTextAreaElement>(null)
+  const [subject, setSubject] = useState('')
+  const [content, setContent] = useState('')
 
-  React.useEffect(() => {
-    if (ref.current) {
-      autosize(ref.current)
-    }
-  }, [])
+  const handleChangeSubject = useCallback(
+    (ev: React.ChangeEvent<HTMLInputElement>) => {
+      setSubject(ev.target.value)
+    },
+    [],
+  )
 
   return (
     <div className={styles.editContent}>
-      <input className={styles.subject} type="text" placeholder="タイトル" />
-      <textarea
+      <input
+        className={styles.subject}
+        type="text"
+        placeholder="タイトル"
+        value={subject}
+        onChange={handleChangeSubject}
+      />
+      <Editor
         className={styles.editor}
         placeholder="本文を書きましょう"
-        ref={ref}
+        value={content}
+        onEdit={setContent}
       />
     </div>
   )
