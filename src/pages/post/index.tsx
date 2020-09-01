@@ -3,6 +3,7 @@ import { useState, useCallback } from 'react'
 
 import { Editor } from '@/components/editor'
 import { SiteHeader } from '@/components/site-header'
+import { Button } from '@/components/button'
 
 import styles from './index.module.css'
 
@@ -34,6 +35,7 @@ const PostPage: NextPage = () => {
           value={content}
           onEdit={setContent}
         />
+        <Button className={styles.submitButton}>投稿する</Button>
       </div>
     </>
   )
