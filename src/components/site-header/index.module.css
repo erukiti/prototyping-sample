@@ -6,10 +6,18 @@
 
 .left {
   margin: 16px auto 16px 48px;
+  display: flex;
+  align-items: center;
 }
 
 .right {
   margin: 16px 48px 16px auto;
+  display: flex;
+  align-items: center;
+}
+
+.item + .item {
+  margin-left: 24px;
 }
 
 .userIcon {
