@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+.left {
+  margin: 16px auto 16px 48px;
+}
+
+.right {
+  margin: 16px 48px 16px auto;
+}
+
+.userIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+}
