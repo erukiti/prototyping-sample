@@ -21,12 +21,6 @@
   margin-left: 12px;
 }
 
-.userIcon {
-  width: 48px;
-  height: 48px;
-  border-radius: 24px;
-}
-
 .userName {
   font-size: 16px;
   opacity: 0.5;

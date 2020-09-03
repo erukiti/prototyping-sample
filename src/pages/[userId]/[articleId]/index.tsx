@@ -5,6 +5,7 @@ import Error from 'next/error'
 import { useGetArticleQuery } from '@/generated/graphql'
 import { Article } from '@/components/article'
 import { SiteHeader } from '@/components/site-header'
+import { UserIcon } from '@/components/user-icon'
 import { formatDate } from '@/utils/date'
 
 import styles from './index.module.css'
@@ -43,7 +44,7 @@ const ArticlePage: NextPage = () => {
         <h1 className={styles.subject}>{subject}</h1>
         <div className={styles.userContainer}>
           <div>
-            <img className={styles.userIcon} src="/profile.png" />
+            <UserIcon src="/profile.png" />
           </div>
           <div className={styles.userText}>
             <div className={styles.userId}>

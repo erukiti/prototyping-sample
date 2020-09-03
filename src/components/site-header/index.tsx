@@ -1,6 +1,8 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 
+import { UserIcon } from '@/components/user-icon'
+
 import styles from './index.module.css'
 
 export { SiteHeaderItem } from './item'
@@ -25,11 +27,7 @@ export const SiteHeader: React.FC<Props> = ({ left, right }) => {
     </a>
   )
 
-  const rightElement = right ? (
-    right
-  ) : (
-    <img className={styles.userIcon} src="/profile.png" />
-  )
+  const rightElement = right ? right : <UserIcon src="/profile.png" />
   return (
     <header className={styles.header}>
       <div className={styles.left}>{leftElement}</div>
