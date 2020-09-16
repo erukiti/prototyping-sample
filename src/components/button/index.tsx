@@ -4,13 +4,16 @@ import { useClassNames } from '@/utils'
 
 import styles from './index.module.css'
 
-type Props = React.ComponentPropsWithRef<'button'>
+type Props =
+  | (React.ComponentPropsWithRef<'button'> & { as?: 'button' })
+  | (React.ComponentPropsWithRef<'a'> & { as: 'a' })
 
-export const Button: React.FC<Props> = ({ className, children, ...rest }) => {
+export const Button: React.FC<Props> = ({
+  className,
+  children,
+  as = 'button',
+  ...rest
+}) => {
   const _className = useClassNames(styles.button, className)
-  return (
-    <button className={_className} {...rest}>
-      {children}
-    </button>
-  )
+  return React.createElement(as, { ...rest, className: _className }, children)
 }
