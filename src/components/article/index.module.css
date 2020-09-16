@@ -1,3 +1,60 @@
 .paragraph {
   margin-top: 1rem;
 }
+
+.subject {
+  margin-top: 32px;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+.userContainer {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.userText {
+  margin-left: 12px;
+}
+
+.userName {
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.publishedAt {
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.newContent {
+  margin-left: 8px;
+  color: #22c;
+}
+
+.icon {
+  margin-left: 8px;
+}
+
+.icon + .icon {
+  margin-left: 4px;
+}
+
+.articleFooter {
+  margin-top: 16px;
+  border-top: 1px solid #888;
+  border-bottom: 1px solid #888;
+  display: flex;
+  padding: 16px 0;
+}
+
+.userDescription {
+  font-size: 14px;
+}
+
+.articleFooterContainer {
+  margin: 32px 0;
+  display: flex;
+  align-items: center;
+}

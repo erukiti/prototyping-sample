@@ -10,6 +10,10 @@
   "dependencies": {
     "@apollo/client": "^3.1.4",
     "@apollo/react-hooks": "^4.0.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "autosize": "^4.0.2",
     "graphql": "^15.3.0",
     "minireset.css": "^0.0.6",
